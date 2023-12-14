@@ -1,0 +1,9 @@
+Hello! This code is for a presentation for my linear algebra class. The main file is modified code from Steve Brunton's
+video SVD: Image Compression [Python]
+https://www.youtube.com/watch?v=H7qMMudo3e8&list=PLbUmlgDYo6ZehxyTldwJWlji8tUDCPudN&index=4
+I also used information from Anna Zemlyanova's Applied Projects for an Introductory Linear Algebra Class:
+https://www.math.ksu.edu/~azem/project48lis.pdf
+As well as ZeroBone's article:
+https://zerobone.net/blog/cs/svd-image-compression/
+
+Note this code as been partially written and debugged using ChatGPT.
