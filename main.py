@@ -27,7 +27,7 @@ print(len(S), len(S[0]))
 print(len(VT), len(VT[0]))
 
 j = 0
-for r in (1, 2, 3, 5, 20, 100):
+for r in (1, 2, 3, 5, 20, 100, 500):
     # Construct approximate image
     Xapprox = U[:, :r] @ S[0:r, :r] @ VT[:r, :]
     plt.figure(j+1)
@@ -43,4 +43,13 @@ for r in (1, 2, 3, 5, 20, 100):
     print("S:", len(S[0:r, :r]), " x ", len(S[0:r, :r][0]))
     print("VT:", len(VT[:r, :]), " x ", len(VT[:r, :][0]))
 
-print("done")
+
+plt.figure(1)  # Plot of singular values
+plt.semilogy(np.diag(S))
+plt.title('Singular Values')
+plt.show()
+
+plt.figure(2)  # Cumulative sum of singular values
+plt.semilogy(np.cumsum(np.diag(S))/np.sum(np.diag(S)))
+plt.title('Singular Values: Cumulative Sum')
+plt.show()

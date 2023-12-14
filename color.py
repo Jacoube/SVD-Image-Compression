@@ -28,7 +28,7 @@ UB, SB, VTB = np.linalg.svd(blue_channel, full_matrices=False)
 SB = np.diag(SB)
 
 j = 0
-for r in (1, 2, 3, 5, 20, 100):
+for r in (1, 2, 3, 5, 20, 100, 500):
     # Construct approximate images for each color channel
     Rapprox = UR[:, :r] @ SR[0:r, :r] @ VTR[:r, :]
     Gapprox = UG[:, :r] @ SG[0:r, :r] @ VTG[:r, :]
@@ -48,3 +48,12 @@ for r in (1, 2, 3, 5, 20, 100):
     plt.title('r =' + str(r))
     plt.show()
 
+plt.figure(1)  # Plot of singular values
+plt.semilogy(np.diag(SR))
+plt.title('Singular Values')
+plt.show()
+
+plt.figure(2)  # Cumulative sum of singular values
+plt.semilogy(np.cumsum(np.diag(SR))/np.sum(np.diag(SR)))
+plt.title('Singular Values: Cumulative Sum')
+plt.show()
